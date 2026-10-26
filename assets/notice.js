@@ -1,6 +1,6 @@
-import { SBServer } from "../../scripts/sb-server.module.js";
+import { SBServer } from "../scripts/sb-server.module.js";
 import $ from "jquery";
-import Mysweet from "../../scripts/mySweet.js";
+import Mysweet from "../scripts/mySweet.js";
 
 const update = new SBServer(
     "https://hqqykvvumlgoudkikmlx.supabase.co",

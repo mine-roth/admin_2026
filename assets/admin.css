@@ -16,7 +16,7 @@
     position: absolute;
     left:0;
     background-color: black;
-    background-image: url(../../res/Icon.png);
+    background-image: url(../res/Icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
@@ -48,7 +48,7 @@ body {
     background-color: whitesmoke;
     color: #ffffff;
     padding: 10px;
-    background-image: url(../../res/bg2.png);
+    background-image: url(../res/bg2.png);
     background-size: 60%;
     background-blend-mode: soft-light;
 }

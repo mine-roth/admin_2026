@@ -1,5 +1,5 @@
 import $ from "jquery";
-import {SBServer} from "../../scripts/sb-server.module.js";
+import {SBServer} from "../scripts/sb-server.module.js";
 
 const market_sv = new SBServer(
     "https://hqqykvvumlgoudkikmlx.supabase.co",
