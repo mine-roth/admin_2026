@@ -1,7 +1,7 @@
 import {SBServer} from "../scripts/sb-server.module.js";
 import $ from "jquery";
 import Mysweet from "../scripts/mySweet.js";
-// UPDATED
+// FINAL
 
 const users = new SBServer(
     "https://hqqykvvumlgoudkikmlx.supabase.co",
@@ -25,7 +25,7 @@ globalThis.selectUID=(uid, row)=>{
 
 kickOff();
 async function kickOff() {
-    fkdb = await users.get(`limit=7`);
+    fkdb = await users.get(`limit=7&order=id.asc`);
     for(let u=0;u<7;u++) {
         if(fkdb[u]) {
             $('#r'+u).html(
@@ -125,7 +125,7 @@ async function updateRows() {
 
 async function startAfter(uid) {
     statusOut.html('Getting Data...');
-    fkdb = await users.get(`id=gt.${uid}&limit=7`);
+    fkdb = await users.get(`id=gt.${uid}&limit=7&order=id.asc`);
     for(let u=0;u<7;u++) {
         if(fkdb[u]) {
             $('#r'+u).html(
