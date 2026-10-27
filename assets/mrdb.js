@@ -1,6 +1,7 @@
 import {SBServer} from "../scripts/sb-server.module.js";
 import $ from "jquery";
 import Mysweet from "../scripts/mySweet.js";
+// FULLY CORRECTED
 
 const users = new SBServer(
     "https://hqqykvvumlgoudkikmlx.supabase.co",
