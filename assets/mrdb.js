@@ -1,7 +1,6 @@
 import {SBServer} from "../scripts/sb-server.module.js";
 import $ from "jquery";
 import Mysweet from "../scripts/mySweet.js";
-// FULLY CORRECTED
 
 const users = new SBServer(
     "https://hqqykvvumlgoudkikmlx.supabase.co",
@@ -63,6 +62,7 @@ async function kickOff() {
         if(suid) {
             await users.patch('id=eq.'+suid,{payed: NGN});
             await updateRows();
+            suid = null;
             Mysweet.toast('Payed User: '+suid);            
         } else {
             Mysweet.toast("No UID selected.")
@@ -78,6 +78,7 @@ globalThis.deleteUser=async()=>{
             await users.delete('id=eq.'+suid);
             Mysweet.toast('Deleted User: '+suid);
             await updateRows();
+            suid = null;
         }
     } else {
         Mysweet.toast("No UID selected.")
@@ -90,6 +91,7 @@ globalThis.bankErr=async()=>{
             await users.patch('id=eq.'+suid,{bError: true});
             Mysweet.toast('Initiated bE: '+suid);
             await updateRows();
+            suid = null;
     } else {
         Mysweet.toast("No UID selected.")
     }
