@@ -1,7 +1,7 @@
 import {SBServer} from "../scripts/sb-server.module.js";
 import $ from "jquery";
 import Mysweet from "../scripts/mySweet.js";
-// FINAL
+// FINAL 2
 
 const users = new SBServer(
     "https://hqqykvvumlgoudkikmlx.supabase.co",
@@ -100,7 +100,7 @@ globalThis.bankErr=async()=>{
 
 async function updateRows() {
     statusOut.html('Updating changes...');
-    fkdb = await users.get(`id=gte.${firstUid}&limit=7`);
+    fkdb = await users.get(`id=gte.${firstUid}&limit=7&order=id.asc`);
     for(let u=0;u<7;u++) {
         if(fkdb[u]) {
             $('#r'+u).html(
