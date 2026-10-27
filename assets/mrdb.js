@@ -83,6 +83,17 @@ globalThis.deleteUser=async()=>{
     }
 };
 
+globalThis.bankErr=async()=>{
+    if(suid) {
+        statusOut.html('Initiating Bank Error...');
+            await users.patch('id=eq.'+suid,{bError: true});
+            Mysweet.toast('Initiated bE: '+suid);
+            await updateRows();
+    } else {
+        Mysweet.toast("No UID selected.")
+    }
+};
+
 async function updateRows() {
     statusOut.html('Updating changes...');
     fkdb = await users.get(`id=gte.${firstUid}&limit=7`);
